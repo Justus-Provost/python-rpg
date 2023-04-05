@@ -22,7 +22,8 @@ def get_choices(menu: str, legal_choices: tuple) -> str:
         user_choice = input("Your Choice: ")
         # give feedback if not in legal choices
         if user_choice not in legal_choices:
-            print()
+            print("Sorry that is not an option please choose one of the following:")
+            print(legal_choices)
     return user_choice
 
 if __name__ == "__main__":
@@ -30,4 +31,14 @@ if __name__ == "__main__":
     menu+= "\t2 - Option #2\n\t3 - Option #3\n\n"
     selection = get_choices(menu,("1","2","3"))
 
+    print(f"You selected {selection}")
+
+    new_menu = """
+    Here is your list of options:
+        1 - Option #1: Eat an egg.
+        2 - Option #2: Explode an egg.
+        3 - Option #3: Hatch an egg.
+    """
+    options = ("1","2","3")
+    new_choice = get_choices(new_menu, options)
     print(f"You selected {selection}")
