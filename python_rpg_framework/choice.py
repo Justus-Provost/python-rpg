@@ -4,7 +4,7 @@ in other similar projects."""
 
 # import statements
 
-def get_choices(menu: str, legal_choices: tuple) -> str:
+def get_choice(menu: str, legal_choices: tuple) -> str:
     """displays a menu of options, and asks the user to make a choice.
     
     Args:
@@ -29,7 +29,7 @@ def get_choices(menu: str, legal_choices: tuple) -> str:
 if __name__ == "__main__":
     menu = "Here is your list of options:\n\t1 - Option #1\n"
     menu+= "\t2 - Option #2\n\t3 - Option #3\n\n"
-    selection = get_choices(menu,("1","2","3"))
+    selection = get_choice(menu,("1","2","3"))
 
     print(f"You selected {selection}")
 
@@ -40,5 +40,5 @@ if __name__ == "__main__":
         3 - Option #3: Hatch an egg.
     """
     options = ("1","2","3")
-    new_choice = get_choices(new_menu, options)
+    new_choice = get_choice(new_menu, options)
     print(f"You selected {selection}")
