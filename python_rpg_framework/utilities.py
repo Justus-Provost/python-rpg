@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 def get_file_contents(path: str, filename: str) -> str:
     """Returns the contents of the file in the path.
@@ -20,3 +21,6 @@ def get_file_contents(path: str, filename: str) -> str:
 if __name__ == "__main__":
     contents = get_file_contents("data/", "player.json")
     print(contents)
+    player_dict = json.loads(contents)
+    print(player_dict)
+    print(type(json.loads(contents)))
