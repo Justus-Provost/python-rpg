@@ -1,0 +1,12 @@
+{
+    "player":[
+        {
+            "name": "Luciano",
+            "species": "Half-Elf",
+            "class": "Rogue",
+            "health": 5,
+            "ac": 12
+        }
+    ]
+    
+}
