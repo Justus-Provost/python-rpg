@@ -23,4 +23,4 @@ if __name__ == "__main__":
     print(contents)
     player_dict = json.loads(contents)
     print(player_dict)
-    print(type(json.loads(contents)))
+    print(type(json.loads(contents))) 

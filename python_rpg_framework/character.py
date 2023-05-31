@@ -3,6 +3,10 @@ The base class for the player and NPCs. Will have attributes and behavior
 common to all characters.
 """
 
+
+import dm
+
+
 class Character:
     """Any playing and non-playing character share these traits
     
@@ -27,10 +31,15 @@ class Character:
         self.class_name = class_name
 
         # initialize all remaining stats to 0 (we'll create a funtion to set them)
-        self.strength = 0
-        self.dexterity = 0
-        self.constitution = 0
-        self.intelligence = 0
+        self.strength = dm.roll_stats()
+        self.dexterity = dm.roll_stats()
+        self.constitution = dm.roll_stats()
+        self.intelligence = dm.roll_stats()
+
+        self.attack_modifier = dm.get_modifier(self.strength)
+        self.Acrobatics_modifier = dm.get_modifier(self.dexterity)
+        self.Resilience_modifier = dm.get_modifier(self.constitution)
+        self.Perception_modifier = dm.get_modifier(self.intelligence)
 
     def get_stats(self) -> str:
         """return a formatted sting of stats"""
@@ -39,6 +48,10 @@ class Character:
         stats += f"Strength: {self.strength}\nDexterity: {self.dexterity}\n"
         stats += f"Constitution: {self.constitution}\n"
         stats += f"Intelligence: {self.intelligence}\n"
+        stats += f"Attack Modifier: {self.attack_modifier}\n"
+        stats += f"Acrobatics Modifier: {self.Acrobatics_modifier}\n"
+        stats += f"Resilience Modifier: {self.Resilience_modifier}\n"
+        stats += f"Perception Modifier: {self.Perception_modifier}\n"
         return stats
 
 # global scope
