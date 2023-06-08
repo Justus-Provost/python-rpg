@@ -66,6 +66,18 @@ class Character:
         if show == True:
             print(stat + " increase " + str(1))
 
+    def decrease_stat(self, stat, num, show=True):
+        if stat == "str":
+            self.strength -= num
+        elif stat == "dex":
+            self.dexterity -= num
+        elif stat == "con":
+            self.constitution -= num
+        elif stat == "int":
+            self.intelligence -= num
+        if show == True:
+            print(stat + " decrease " + str(1))
+
 # global scope
 if __name__ == "__main__":
     player = Character("Luciano", "Half-Elf")
