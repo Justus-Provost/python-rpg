@@ -77,8 +77,25 @@ class Character:
             self.intelligence -= num
         if show == True:
             print(stat + " decrease " + str(1))
+    
+    def write_to_dict(self):
+        player_dict = {
+            "name": self.name,
+            "class": self.class_name,
+            "strength": self.strength,
+            "dexterity": self.dexterity,
+            "constitution": self.constitution,
+            "intelligence": self.intelligence,
+            "attack modifier": self.attack_modifier,
+            "acrobatics modifier": self.Acrobatics_modifier,
+            "resilience modifier": self.Resilience_modifier,
+            "perception modifier": self.Perception_modifier
+        }
+        return player_dict
+
 
 # global scope
 if __name__ == "__main__":
     player = Character("Luciano", "Half-Elf")
     print(player.get_stats())
+    print(player.write_to_dict())
